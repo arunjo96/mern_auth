@@ -19,6 +19,13 @@ const PORT = process.env.PORT || 7000;
 
 const server = http.createServer(app);
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    status: "success",
+    message: "MERN Auth API is running",
+  });
+});
+
 
 app.use("/api/auth", authRouter);
 
